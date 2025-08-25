@@ -18,6 +18,24 @@ install_python() {
   python3 -m pip install . --root "$DEST" --prefix /usr --no-deps
 }
 
+install_calld_conf() {
+  mkdir -p "$DEST/etc/wazo-calld/conf.d"
+  install -m 0644 etc/wazo-calld/conf.d/50-wazo-survey.yml \
+    "$DEST/etc/wazo-calld/conf.d/50-wazo-survey.yml"
+}
+
+install_dialplan() {
+  mkdir -p "$DEST/etc/asterisk/extensions_extra.d"
+  install -m 0644 dialplan/survey.conf \
+    "$DEST/etc/asterisk/extensions_extra.d/95-wazo-survey.conf"
+}
+
+case "$CMD" in
+  install) log "BEGIN install -> $DEST"; install_python; install_calld_conf; install_dialplan; log "END install";;
+  uninstall) log "BEGIN uninstall -> $DEST"; log "END uninstall";;
+  *) die "unknown command: $CMD (install|uninstall)";;
+esac
+
 case "$1" in
     build)
     ;;
