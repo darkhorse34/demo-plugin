@@ -2,7 +2,7 @@ name: wazo-plugin-survey-feedback
 namespace: quintana
 version: 0.0.1
 author: Piotr
-display_name: Plugin Survey Feedback
+display_name: Plugin Demo
 plugin_format_version: 1
 min_wazo_version: 25.12
 tags:
