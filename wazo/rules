@@ -1,6 +1,22 @@
 #!/bin/sh
 # Copyright 2021 Wazo Team (see the AUTHORS file)
 # SPDX-License-Identifier: GPLv3
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+CMD="${1:-}"; DEST="${2:-/}"
+log(){ echo "[wazo/rules] $*" >&2; }
+die(){ echo "[wazo/rules][ERROR] $*" >&2; exit 2; }
+[[ -n "$CMD" ]] || die "missing command"; [[ -n "$DEST" ]] || die "missing DESTDIR"
+sed -i 's/\r$//' "$0" || true
+
+install_python() {
+  if [[ -f requirements.txt ]]; then
+    python3 -m pip install -r requirements.txt --root "$DEST" --prefix /usr
+  fi
+  python3 -m pip install . --root "$DEST" --prefix /usr --no-deps
+}
 
 case "$1" in
     build)
