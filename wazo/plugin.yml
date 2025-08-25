@@ -1,5 +1,5 @@
 name: wazo-plugin-demo
-namespace: survey
+namespace: quintana
 version: 0.0.1
 author: Piotr
 display_name: Plugin Demo
