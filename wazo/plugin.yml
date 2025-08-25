@@ -1,5 +1,5 @@
 name: wazo-plugin-survey
-namespace: survey-feedback
+namespace: survey
 description: Post-call survey (IVR 1–5) + API to transfer caller into survey
 version: 0.0.1
 author: Piotr
