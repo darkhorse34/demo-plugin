@@ -1,5 +1,6 @@
 name: wazo-plugin-demo
 namespace: quintana
+description: Post-call survey (IVR 1–5) + API to transfer caller into survey
 version: 0.0.1
 author: Piotr
 display_name: Plugin Demo
