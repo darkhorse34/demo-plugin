@@ -1,8 +1,9 @@
-name: wazo-plugin-demo
-namespace: quintana
+name: wazo-call-survey-plugin
+namespace: survey-feedback
+descrkption: Post-call survey (IVR 1–5) + API to transfer caller into survey
 version: 0.0.1
 author: Piotr
-display_name: Plugin Demo
+display_name: Survey Plugin
 plugin_format_version: 1
 min_wazo_version: 25.12
 tags:
@@ -11,3 +12,4 @@ tags:
 debian_depends:
   - vim
 homepage: https://github.com/darkhorse34/demo-plugin
+
